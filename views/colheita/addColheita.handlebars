@@ -1,0 +1,35 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Colheitas</h1>
+    <form action="/colheita/inserir" method="post">
+        {{!-- Campo 1: data colheita --}}
+        <section class="mb-2">
+            <label for="data_colheita">Data da Colheita</label>
+            <input type="form-control" name="data_colheita" id="data_colheita" class="form-control">
+        </section>
+
+        {{!-- Campo 2: quantidade --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="quantidade_colhida">Quantidade Colhida</label>
+                <input type="text" name="quantidade_colhida" id="quantidade_colhida" class="form-control">
+            </div>
+
+                {{!-- Campo 3: Selecionar a planta --}}
+<section class="mb-2">
+    <label for="plantaId">Escolha a planta</label>
+    <select class="form-select" name="plantaId" id="plantaId">
+        <option value="">Escolha uma opção...</option>
+        {{#each dados}}
+        <option value="{{dataValues.id}}">{{dataValues.nome}}</option>
+        {{/each}}
+    </select>
+</section>
+
+        {{!-- Campo 3: Botao de envio --}}
+        <section class="mb-2">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+
+
+    </form>
+</section>

@@ -1,0 +1,31 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página Colheita</h2>
+        <a href="/colheita/criar" class="btn btn-primary">Cadastrar colheita</a>
+    </section>
+
+
+    <div class="container-fluid mb-4 row row-cols-1 row-cols-md-3 g-4 mt-2">
+        {{#each dados}} <!--estrutura de repetição-->
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="card-title">{{planta.dataValues.nome}}</p>
+                    <p class="card-text m-0">Data da Colheita: {{dataValues.data_colheita}}</p>
+                    <p class="card-text m-0">Quantidade Colhida: {{dataValues.quantidade_colhida}}</p>
+                </div>
+
+                <div class="card-footer text-body-secondary">
+                  <a href="" class="btn btn-danger" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </div>
+            </div>
+        </div>
+          {{>modalDeleteColheita idItem=dataValues.id}}
+        {{else}}
+        <p>Nenhuma planta foi colhida ainda.</p> 
+
+        {{/each}}
+    </div>
+     </section>

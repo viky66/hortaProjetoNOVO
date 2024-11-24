@@ -1,0 +1,36 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Plantas</h1>
+    <form action="/planta/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control">
+        </section>
+
+        {{!-- Campo 2: idade e data de inicio --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="data_plantio">Data do Plantio</label>
+                <input type="form-control" name="data_plantio" id="data_plantio" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="tipo">Tipo da Planta</label>
+                <input type="text" name="tipo" id="tipo" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="quantidade">Quantidade</label>
+                <input type="text" name="quantidade" id="quantidade" class="form-control">
+            </div>
+        </section>
+
+
+        {{!-- Campo 3: Botao de envio --}}
+        <section class="mb-2">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+
+
+    </form>
+</section>
