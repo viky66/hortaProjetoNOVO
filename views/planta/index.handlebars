@@ -1,28 +1,31 @@
 <section class="container">
     <section class="d-flex justify-content-between mt-4">
         <h2>Página Cadastro de Plantas</h2>
-        <a href="/planta/create" class="btn btn-primary">Cadastrar nova planta</a>
+        <a href="/planta/create" class="btn btn-success">Cadastrar nova planta</a>
     </section>
 </section>
-{{#each dados}}
-    <div class="col">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">{{dataValues.nome}}</h5>
-                <p class="card-text m-0">ID: {{dataValues.id}}</p>
-                <p class="card-text m-0">Tipo: {{dataValues.tipo}}</p>
-                <p class="card-text m-0">Data do plantio: {{dataValues.data_plantio}}</p>
-                <p class="card-text m-0">Quantidade: {{dataValues.quantidade}}</p>
-            </div>
 
-            <div class="card-footer text-body-secondary">
-                  <a href="" class="btn btn-danger" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+<div class="container-fluid mb-4 row row-cols-1 row-cols-md-3 g-4 mt-2"></div>
+    {{#each dados}}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{dataValues.nome}}</h5>
+                    <p class="card-text m-0">ID: {{dataValues.id}}</p>
+                    <p class="card-text m-0">Tipo: {{dataValues.tipo}}</p>
+                    <p class="card-text m-0">Data do plantio: {{dataValues.data_plantio}}</p>
+                    <p class="card-text m-0">Quantidade: {{dataValues.quantidade}}</p>
+                </div>
+
+                <div class="card-footer text-body-secondary">
+                    <a href="" class="btn btn-danger" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </div>
             </div>
         </div>
-    </div>
-    {{>modalDelete idItem=dataValues.id}}
-{{else}}
-    <p>Nenhuma planta cadastrada ainda.</p>
-{{/each}}
+        {{>modalDelete idItem=dataValues.id}}
+    {{else}}
+        <p>Nenhuma planta cadastrada ainda.</p>
+    {{/each}}
+</div>
