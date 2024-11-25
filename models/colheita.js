@@ -18,7 +18,7 @@ const colheita = database.sequelizeConfig.define(
 )
 //definindo que uma planta pertence a varias colheitas, mas uma colheita pertence a uma só planta.
 planta.hasMany(colheita,{
-    foreignKey: 'plantaId',
+    foreignKey: 'plantaId',  // a tabela colheita terá uma coluna chamada plantaId
     onDelete:'CASCADE',
     onUpdate:'CASCADE'
 })

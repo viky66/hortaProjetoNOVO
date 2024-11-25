@@ -17,7 +17,7 @@ router.post('/inserir', async (req, res) => {
         });
 
         if (resultado) {
-            res.redirect('/colheita');  // Redireciona para a página de listagem de colheitas
+            res.redirect('/colheita');  //redireciona para a página de listagem de colheitas
         } else {
             res.json({ erro: "Não foi possível cadastrar" });
         }
@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
 router.get('/deletar/:id', async (req, res) => {
     const resultado = await colheita.destroy({
         where:{
-            id:req.params.id//estamos recebendo o id via parâmetro, que está sendo passado na rota, no caso é o :id que estamos recebendo.
+            id:req.params.id //estamos recebendo o id via parâmetro, que está sendo passado na rota, no caso é o :id que estamos recebendo.
         }
     })
     res.redirect('/colheita')

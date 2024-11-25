@@ -16,8 +16,8 @@ router.post('/store', async (req, res) => {
             quantidade: req.body.quantidade,
         });
 
-        console.log("Planta cadastrada:", produto); // Loga o produto inserido
-        res.redirect('/planta'); // Redireciona para a página de listagem
+        console.log("Planta cadastrada:", produto);
+        res.redirect('/planta'); // redireciona para a página de listagem
     } catch (error) {
         console.error("Erro ao cadastrar planta:", error);
         res.json({ erro: "Não foi possível cadastrar" });
